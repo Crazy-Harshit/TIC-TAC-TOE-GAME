@@ -1,0 +1,58 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #000;
+    --cell: #fff;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #fff;
+    --cell: #1e1e1e;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 90px;
+    height: 90px;
+    background: var(--cell);
+    border: 2px solid var(--text);
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell.win {
+    background: #6fdc6f;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 8px 12px;
+}
+
+@media (max-width: 500px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+    }
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+}
